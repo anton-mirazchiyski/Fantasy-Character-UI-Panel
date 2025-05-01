@@ -7,8 +7,34 @@ body {
     background-color: #60B5FF;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1 {
     color: #ddbc9b;
     text-align: center;
     margin: 3rem 0;
+}
+
+.card-container {
+    border: 3px solid black;
+    border-radius: 11px;
+    background-color: #ddbc9b;;
+    padding: 1.5rem 0;
+    font-size: 1.3rem;
+    min-width: 30vw;
+}
+
+.card-container > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+}
+
+.card-container > ul li {
+    margin: 2rem 0;
 }
