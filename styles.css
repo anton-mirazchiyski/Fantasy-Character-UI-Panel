@@ -1,0 +1,14 @@
+@import url(reset.css);
+
+
+body {
+    font-family: "Comic Relief", sans-serif;
+    font-size: 1rem;
+    background-color: #60B5FF;
+}
+
+h1 {
+    color: #ddbc9b;
+    text-align: center;
+    margin: 3rem 0;
+}
