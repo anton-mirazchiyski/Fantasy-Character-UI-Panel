@@ -50,6 +50,7 @@ input {
 .forms {
     margin: 4rem 0;
     font-size: 1.3rem;
+    display: none;
 }
 
 .panel > ul {
