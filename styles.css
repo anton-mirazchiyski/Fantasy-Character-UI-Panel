@@ -28,6 +28,16 @@ button {
     max-width: 12.5rem;
 }
 
+label {
+    font-weight: 600;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 7px;
+    text-indent: 10px;
+}
+
 .panel {
     border: 3px solid black;
     border-radius: 11px;
@@ -35,6 +45,11 @@ button {
     padding: 1.8rem 0;
     font-size: 1.3rem;
     min-width: 30vw;
+}
+
+.forms {
+    margin: 4rem 0;
+    font-size: 1.3rem;
 }
 
 .panel > ul {
@@ -46,6 +61,17 @@ button {
 
 .panel > ul li {
     margin: 2rem 0;
+}
+
+.name-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-btn {
+    padding: 0.2rem;
+    align-self: center;
+    margin-top: 2rem;
 }
 
 button:hover {

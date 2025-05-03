@@ -15,14 +15,24 @@
             <h1>Fantasy Character Panel</h1>
             <section class="panel">
                 <ul>
-                    <li><button>First element</button></li>
-                    <li><button>Second element</button></li>
-                    <li><button>Third element</button></li>
-                    <li><button>Fourth element</button></li>
+                    <li><button class="panel-btn choose-name-btn">Choose name</button></li>
+                    <li><button class="panel-btn">Second element</button></li>
+                    <li><button class="panel-btn">Third element</button></li>
+                    <li><button class="panel-btn">Fourth element</button></li>
                 </ul>
+            </section>
+            <section class="forms">
+                <form class="name-form" method="get">
+                    <div>
+                        <label for="name">Character Name:</label>
+                        <input type="text" name="name" id="name" required minlength="4" maxlength="12">
+                    </div>
+                    <button class="input-btn" type="submit">Enter</button>
+                </form>
             </section>
         </main>
         <footer></footer>
     </div>
+    <script src="scripts/name.js"></script>
 </body>
 </html>
