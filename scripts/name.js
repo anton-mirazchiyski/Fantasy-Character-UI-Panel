@@ -1,6 +1,8 @@
 const panelListElement = document.querySelector(".panel > ul");
 const chooseNameButtonElement = document.querySelector(".choose-name-btn");
 
+const nameErrorMessageParagraph = document.querySelector(".name-error-message");
+
 
 function chooseName() {
     panelListElement.style.display = "none";
@@ -11,10 +13,17 @@ function chooseName() {
 
     nameFormElement.addEventListener("submit", (e) => {
         e.preventDefault();
-        chooseNameButtonElement.textContent = nameInputElement.value;
+        const chosenName = nameInputElement.value;
+        if (!/^[A-Z][a-z]+$/.test(chosenName)) {
+            nameErrorMessageParagraph.style.display = "block";
+            return;
+        }
+
+        chooseNameButtonElement.textContent = chosenName;
         panelListElement.style.display = "flex";
         formsSectionElement.style.display = "none";
-    }, {once: true});
+        nameErrorMessageParagraph.style.display = "none";
+    });
 }
 
 chooseNameButtonElement.addEventListener("click", chooseName);
