@@ -77,6 +77,14 @@ input {
     align-items: center;
 }
 
+.name-randomization-btn {
+    font-size: 1.1rem;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.2rem;
+    background-color: rgb(32, 31, 31);
+    color: #f4e5e5;
+}
+
 .input-btn {
     padding: 0.2rem;
     align-self: center;

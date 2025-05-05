@@ -1,14 +1,16 @@
 const panelListElement = document.querySelector(".panel > ul");
 const chooseNameButtonElement = document.querySelector(".choose-name-btn");
+const randomNameButtonElement = document.querySelector("button.name-randomization-btn");
+
+const formsSectionElement = document.querySelector(".forms");
+const nameInputElement = document.querySelector(".name-form input");
+const nameFormElement = document.querySelector(".name-form");
 
 const nameErrorMessageParagraph = document.querySelector(".name-error-message");
 
 
 function chooseName() {
     panelListElement.style.display = "none";
-    const formsSectionElement = document.querySelector(".forms");
-    const nameInputElement = document.querySelector(".name-form input");
-    const nameFormElement = document.querySelector(".name-form");
     formsSectionElement.style.display = "block";
 
     nameFormElement.addEventListener("submit", (e) => {
@@ -26,4 +28,16 @@ function chooseName() {
     });
 }
 
+function generateRandomName() {
+    const prefixes = ["Mord", "Tru", "Fold", "Fire"];
+    const suffixes = ["whin", "grim", "rend"];
+
+    const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+    const randomSuffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+
+    const name = randomPrefix + randomSuffix;
+    nameInputElement.value = name;
+}
+
 chooseNameButtonElement.addEventListener("click", chooseName);
+randomNameButtonElement.addEventListener("click", generateRandomName);
