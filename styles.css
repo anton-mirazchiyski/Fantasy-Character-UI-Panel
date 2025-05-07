@@ -61,7 +61,9 @@ input {
 }
 
 .race-section {
-    margin: 2rem 0;
+    margin: 4rem 0;
+    display: none;
+    flex-direction: column;
 }
 
 .panel > ul {
@@ -78,7 +80,7 @@ input {
 .left-arrow, .right-arrow {
     margin: 0 0.5rem;
     font-size: 2rem;
-    color: rgb(213, 146, 73);
+    color: #f4e5e5;
     cursor: pointer;
 }
 
@@ -106,6 +108,12 @@ input {
     background-color: rgb(32, 31, 31);
     color: #f4e5e5;
     font-size: 1.1rem;
+}
+
+.race-input-btn {
+    align-self: center;
+    margin: 3rem 0;
+    font-size: 1.2rem;
 }
 
 .name-error-message {
