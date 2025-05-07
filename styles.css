@@ -49,6 +49,7 @@ input {
     border: 3px solid black;
     border-radius: 11px;
     background-color: #ddbc9b;
+    box-shadow: 0 4px 6px #333;
     padding: 1.8rem 0;
     font-size: 1.3rem;
     min-width: 30vw;
@@ -136,4 +137,9 @@ input {
 
 button:hover {
     cursor: pointer;
+}
+
+.panel-btn:hover {
+    box-shadow: 0 0 0 2.5px #333;
+    background-color: rgb(223, 128, 25);
 }
