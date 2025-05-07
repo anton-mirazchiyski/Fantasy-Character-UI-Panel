@@ -12,21 +12,21 @@ function chooseRace() {
     panelListElement.style.display = "none";
     raceSectionElement.style.display = "flex"
 
-    const characterRaces = ["Human", "Nord", "Orc", "Dwarf", "Halfling"];
-    let raceIndex = 0;
+    const characterRaces = ["Human", "Nord", "Orc", "High Elf", "Dwarf", "Halfling"];
+    let raceIndex = -1;
 
     nextRaceElement.addEventListener("click", (e) => {
-        let currentRace = characterRaces[raceIndex];
-        raceButtonElement.textContent = currentRace;
         raceIndex++;
         if (raceIndex == characterRaces.length) {
             raceIndex = 0;
         }
+        let currentRace = characterRaces[raceIndex];
+        raceButtonElement.textContent = currentRace;
     });
 
     previousRaceElement.addEventListener("click", (e) => {
         raceIndex--;
-        if (raceIndex == -1) {
+        if (raceIndex < 0) {
             raceIndex = characterRaces.length - 1;
         }
         let currentRace = characterRaces[raceIndex];
