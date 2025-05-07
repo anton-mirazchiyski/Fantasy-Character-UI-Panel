@@ -6,6 +6,7 @@ const chooseRaceElement = document.querySelector(".race-input-btn");
 
 const nextRaceElement = document.querySelector("span.right-arrow");
 const previousRaceElement = document.querySelector("span.left-arrow");
+const raceInputButton = document.querySelector(".race-input-btn");
 
 
 function chooseRace() {
@@ -31,6 +32,15 @@ function chooseRace() {
         }
         let currentRace = characterRaces[raceIndex];
         raceButtonElement.textContent = currentRace;
+    });
+
+    raceInputButton.addEventListener("click", (e) => {
+        if (raceButtonElement.textContent == "Character Race") {
+            return;
+        }
+        chooseRaceButtonElement.textContent = raceButtonElement.textContent;
+        panelListElement.style.display = "flex";
+        raceSectionElement.style.display = "none";
     });
 }
 
