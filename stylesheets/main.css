@@ -36,6 +36,10 @@ input {
     text-indent: 10px;
 }
 
+img {
+    height: auto;
+}
+
 button:hover {
     cursor: pointer;
 }
