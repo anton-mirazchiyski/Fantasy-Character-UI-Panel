@@ -2,7 +2,7 @@ const panelListElement = document.querySelector(".panel > ul");
 const chooseNameButtonElement = document.querySelector(".choose-name-btn");
 const randomNameButtonElement = document.querySelector("button.name-randomization-btn");
 
-const formsSectionElement = document.querySelector(".forms");
+const formsSectionElement = document.querySelector(".name-section");
 const nameInputElement = document.querySelector(".name-form input");
 const nameFormElement = document.querySelector(".name-form");
 
