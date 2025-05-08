@@ -131,6 +131,23 @@ input {
     border-radius: 7px;
 }
 
+.weapon-section {
+    margin: 4rem 0;
+    max-width: 28.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.weapon-section > p {
+    font-size: 1.15rem;
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 0.6rem;
+    background-color: rgb(213, 146, 73);
+    font-weight: 600;
+}
+
 .panel:hover {
     cursor: pointer;
 }
@@ -141,5 +158,10 @@ button:hover {
 
 .panel-btn:hover {
     box-shadow: 0 0 0 2.5px #333;
+    background-color: rgb(223, 128, 25);
+}
+
+.weapon-section > p:hover {
+    cursor: pointer;
     background-color: rgb(223, 128, 25);
 }
