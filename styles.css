@@ -137,6 +137,7 @@ input {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    display: none;
 }
 
 .weapon-section > p {
@@ -164,4 +165,13 @@ button:hover {
 .weapon-section > p:hover {
     cursor: pointer;
     background-color: rgb(223, 128, 25);
+}
+
+.weapon-type.chosen-weapon {
+    background-color: rgb(32, 31, 31);
+    color: #f4e5e5;
+}
+
+.weapon-type.chosen-weapon:hover {
+    background-color: rgb(27, 26, 26);
 }
