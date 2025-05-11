@@ -4,24 +4,25 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    justify-content: center;
     display: none;
 }
 
-.weapon-section > p {
+.weapon-section > button {
     font-size: 1.15rem;
-    border: 2px solid black;
     border-radius: 7px;
     padding: 0.6rem;
     background-color: rgb(201, 145, 84);
     font-weight: 600;
+    min-width: 9.8rem;
 }
 
-.weapon-section > p:hover {
+.weapon-section > button:hover {
     cursor: pointer;
     background-color: rgb(223, 128, 25);
 }
 
-p.chosen-weapon {
+button.chosen-weapon {
     box-shadow: 0 0 0 2.5px #333;
     background-color: rgb(225, 126, 20);
 }
