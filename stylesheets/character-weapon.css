@@ -12,7 +12,7 @@
     border: 2px solid black;
     border-radius: 7px;
     padding: 0.6rem;
-    background-color: rgb(213, 146, 73);
+    background-color: rgb(201, 145, 84);
     font-weight: 600;
 }
 
@@ -21,11 +21,7 @@
     background-color: rgb(223, 128, 25);
 }
 
-.weapon-type.chosen-weapon {
-    background-color: rgb(32, 31, 31);
-    color: #f4e5e5;
-}
-
-.weapon-type.chosen-weapon:hover {
-    background-color: rgb(27, 26, 26);
+p.chosen-weapon {
+    box-shadow: 0 0 0 2.5px #333;
+    background-color: rgb(225, 126, 20);
 }
