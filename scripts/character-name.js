@@ -29,8 +29,8 @@ function chooseName() {
 }
 
 function generateRandomName() {
-    const prefixes = ["Mord", "Tru", "Fold", "Fire"];
-    const suffixes = ["whin", "grim", "rend"];
+    const prefixes = ["Mord", "Tru", "Fold", "Fire", "Grol", "Kell", "Ive"];
+    const suffixes = ["whin", "grim", "rend", "stran", "pren", "dan"];
 
     const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
     const randomSuffix = suffixes[Math.floor(Math.random() * suffixes.length)];
@@ -41,3 +41,7 @@ function generateRandomName() {
 
 chooseNameButtonElement.addEventListener("click", chooseName);
 randomNameButtonElement.addEventListener("click", generateRandomName);
+
+window.addEventListener("load", () => {
+    nameInputElement.value = "";
+});
