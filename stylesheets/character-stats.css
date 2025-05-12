@@ -1,0 +1,22 @@
+.stats-section {
+    margin: 4rem 0;
+    display: none;
+    flex-direction: column;
+    gap: 2.8rem;
+}
+
+.stats-section > button {
+    background-color: rgb(201, 145, 84);
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 0.7rem 0.5rem;
+}
+
+.stats-section > button:hover {
+    background-color: rgb(223, 128, 25);
+}
+
+button.chosen-stat {
+    box-shadow: 0 0 0 2.5px #333;
+    background-color: rgb(225, 126, 20);
+}
