@@ -28,6 +28,7 @@
     display: none;
     max-width: 60%;
     background-color: rgb(219, 79, 79);
+    color: #000000;
     margin-top: 2.5rem;
     padding: 0.7rem;
     border: 1px solid black;
@@ -36,4 +37,14 @@
 
 .input-btn:hover {
     background-color: rgb(223, 128, 25);
+    color: #000000;
+}
+
+
+@media (max-width: 600px) {
+    .name-form > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
 }

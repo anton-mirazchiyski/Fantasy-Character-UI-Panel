@@ -13,7 +13,7 @@ function chooseRace() {
     panelListElement.style.display = "none";
     raceSectionElement.style.display = "flex"
 
-    const characterRaces = ["Human", "Nord", "Orc", "High Elf", "Dwarf", "Halfling"];
+    const characterRaces = ["Human", "Nord", "Orc", "High Elf", "Night Elf", "Dwarf", "Halfling"];
     let raceIndex = -1;
 
     nextRaceElement.addEventListener("click", (e) => {

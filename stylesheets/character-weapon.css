@@ -20,9 +20,17 @@
 .weapon-section > button:hover {
     cursor: pointer;
     background-color: rgb(223, 128, 25);
+    color: #000000;
 }
 
 button.chosen-weapon {
     box-shadow: 0 0 0 2.5px #333;
     background-color: rgb(225, 126, 20);
+}
+
+
+@media (max-width: 600px) {
+    .weapon-section {
+        max-width: 20rem;
+    }
 }

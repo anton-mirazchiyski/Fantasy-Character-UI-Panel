@@ -22,6 +22,7 @@ button {
     border: 2px solid black;
     border-radius: 9px;
     background-color: rgb(213, 146, 73);
+    color: #000000;
     min-width: 12.5rem;
     max-width: 12.5rem;
 }
@@ -42,4 +43,11 @@ img {
 
 button:hover {
     cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+        margin-top: 2rem;
+    }
 }
