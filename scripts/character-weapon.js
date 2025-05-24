@@ -15,6 +15,7 @@ function chooseWeapon() {
             
             panelListElement.style.display = "flex";
             weaponsSectionElement.style.display = "none";
+            showPanelDivElement.style.display = "none";
         });
     };
 

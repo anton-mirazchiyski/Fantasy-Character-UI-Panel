@@ -25,8 +25,9 @@
                     <li><button class="panel-btn choose-weapon-btn">Select weapon</button></li>
                     <li><button class="panel-btn choose-mainStat-btn">Select main stat</button></li>
                 </ul>
+                <div class="show-panel-div"><button class="show-panel-btn" type="button">Show panel</button></div>
             </section>
-            <section class="name-section">
+            <section class="character-section name-section">
                 <form class="name-form" method="get">
                     <div>
                         <label for="name">Character Name:</label>
@@ -37,7 +38,7 @@
                     <p class="name-error-message">Character name must contain only letters and must start with a capital letter</p>
                 </form>
             </section>
-            <section class="race-section">
+            <section class="character-section race-section">
                 <div>
                     <span class="left-arrow"><i class="bi bi-caret-left-fill"></i></span>
                     <button class="race-btn">Character Race</button>
@@ -45,7 +46,7 @@
                 </div>
                 <button class="race-input-btn" type="button">Select</button>
             </section>
-            <section class="weapon-section">
+            <section class="character-section weapon-section">
                 <button class="weapon-type" type="button">Dagger</button>
                 <button class="weapon-type" type="button">Sword & Shield</button>
                 <button class="weapon-type" type="button">Staff</button>
@@ -61,7 +62,7 @@
                 <button class="weapon-type" type="button">Dual Axes</button>
                 <button class="weapon-type" type="button">Halberd</button>
             </section>
-            <section class="stats-section">
+            <section class="character-section stats-section">
                 <button class="stat-btn" type="button">Strength</button>
                 <button class="stat-btn" type="button">Agility</button>
                 <button class="stat-btn" type="button">Intelligence</button>
@@ -69,6 +70,7 @@
         </main>
         <footer></footer>
     </div>
+    <script src="scripts/panel.js"></script>
     <script src="scripts/character-name.js"></script>
     <script src="scripts/character-race.js"></script>
     <script src="scripts/character-weapon.js"></script>

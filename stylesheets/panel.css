@@ -34,12 +34,28 @@ h2 {
     margin: 2rem 0;
 }
 
+.show-panel-div {
+    display: none;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.show-panel-btn {
+    min-width: 10rem;
+}
+
 .panel:hover {
     cursor: pointer;
 }
 
 .panel-btn:hover {
     box-shadow: 0 0 0 2.5px #333;
+    background-color: rgb(223, 128, 25);
+    color: #000000;
+}
+
+.show-panel-btn:hover {
     background-color: rgb(223, 128, 25);
     color: #000000;
 }

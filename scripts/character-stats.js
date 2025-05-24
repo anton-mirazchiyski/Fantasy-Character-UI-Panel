@@ -15,6 +15,7 @@ function chooseMainStat() {
 
             panelListElement.style.display = "flex";
             statsSectionElement.style.display = "none";
+            showPanelDivElement.style.display = "none";
         })
     });
 

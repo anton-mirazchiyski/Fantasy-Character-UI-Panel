@@ -41,6 +41,7 @@ function chooseRace() {
         chooseRaceButtonElement.textContent = raceButtonElement.textContent;
         panelListElement.style.display = "flex";
         raceSectionElement.style.display = "none";
+        showPanelDivElement.style.display = "none";
     });
 }
 

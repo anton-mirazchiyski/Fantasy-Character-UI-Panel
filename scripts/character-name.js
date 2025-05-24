@@ -1,4 +1,3 @@
-const panelListElement = document.querySelector(".panel > ul");
 const chooseNameButtonElement = document.querySelector(".choose-name-btn");
 const randomNameButtonElement = document.querySelector("button.name-randomization-btn");
 
@@ -25,6 +24,7 @@ function chooseName() {
         panelListElement.style.display = "flex";
         formsSectionElement.style.display = "none";
         nameErrorMessageParagraph.style.display = "none";
+        showPanelDivElement.style.display = "none";
     });
 }
 
