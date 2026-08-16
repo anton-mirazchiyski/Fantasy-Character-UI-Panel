@@ -12,9 +12,15 @@ main {
 }
 
 h1 {
-    color: #ddbc9b;
+    min-width: 30vw;
+    background-color: #ddbc9b;
+    border: 3px solid #000000;
+    border-radius: 11px;
     text-align: center;
-    margin: 3rem 0;
+    padding: 0.3rem 1.1rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+    margin: 3rem 0 1.1rem 0;
 }
 
 button {
