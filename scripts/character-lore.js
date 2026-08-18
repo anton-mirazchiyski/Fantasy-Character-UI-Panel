@@ -39,3 +39,27 @@ const phrases = {
 function pickRandomOption(options) {
     return options[Math.floor(Math.random() * options.length)];
 }
+
+function constructText() {
+    const meleeWeapons = [
+        'Sword & Shield', 'Axe & Shield', 'Dual Swords', 'Dual Axes', 'Spear & Shield',
+        'Greatsword', 'Battleaxe', 'Warhammer', 'Atgeir', 'Halberd', 'Dagger',
+    ]
+
+    let type = pickRandomOption(phrases.warrior);
+    let origin = pickRandomOption(phrases.origin);
+    let purpose = pickRandomOption(phrases.purpose);
+
+    let result = [
+        nameElement.textContent + ' ',
+        origin,
+        pickRandomOption(words.connectors),
+        type,
+        pickRandomOption(words.connectors),
+        purpose
+    ].join('');
+
+    console.log(result);
+}
+
+createCharacterButtonElement.addEventListener('click', constructText);
