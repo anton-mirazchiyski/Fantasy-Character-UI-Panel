@@ -39,18 +39,20 @@ const phrases = {
     ]
 };
 
+const meleeWeapons = [
+    'Sword & Shield', 'Axe & Shield', 'Dual Swords', 'Dual Axes', 'Spear & Shield',
+    'Greatsword', 'Battleaxe', 'Warhammer', 'Atgeir', 'Halberd', 'Dagger',
+];
+
+const mageWeapons = ['Staff'];
+
+const rangedWeapons = ['Bow', 'Crossbow'];
+
 function pickRandomOption(options) {
     return options[Math.floor(Math.random() * options.length)];
 }
 
 function constructText() {
-    const meleeWeapons = [
-        'Sword & Shield', 'Axe & Shield', 'Dual Swords', 'Dual Axes', 'Spear & Shield',
-        'Greatsword', 'Battleaxe', 'Warhammer', 'Atgeir', 'Halberd', 'Dagger',
-    ];
-    const mageWeapons = ['Staff'];
-    const rangedWeapons = ['Bow', 'Crossbow'];
-
     const characterName = nameElement.textContent;
     const weaponName = weaponElement.textContent;
 
