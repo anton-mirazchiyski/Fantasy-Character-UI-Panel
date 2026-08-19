@@ -6,15 +6,20 @@ const createCharacterButtonElement = document.querySelector('.create-character-b
 const words = {
     elementTypes: ['fire', 'lightning', 'cold', 'arcane'],
     stolenItems: ['ring', 'sword', 'gold', 'necklace'],
-    connectors: [' and ', ', moreover ', '. He ', ', he '],
     familyRelatives: ['wife', 'brother', 'sister', 'mother', 'father'],
-    wealthTypes: ['noble', 'poor']
-}
+    legendaryObjects: ['artifact', 'two-handed sword', 'silver dagger'],
+};
+
+const connectors = {
+    addition: [' and ',  '. Moreover, ', '. Alongside this ', '. In addition, ', '. Furthermore, '],
+    opposition: [' but ', '. However, ', '. On the other hand, ', '. Nevertheless, '],
+};
+
+const pronoun = 'He';
 
 const phrases = {
     warrior: [
         'is a battle-hardened warrior',
-        'sometimes makes his enemies flee from battle',
         'wields his weapon with great strength',
         'often carries his army\'s warbanner on the battlefield',
     ],
@@ -27,16 +32,25 @@ const phrases = {
     archer: [
         'has the ability to fire multiple shots at once',
     ],
-    origin: [
-        `comes from a ${pickRandomOption(words.wealthTypes)} family`,
-        'is a capable soldier of an empire',
-        'has endured life\'s hardships',
-    ],
+    origin: {
+        noble: [
+            'comes from a noble family',
+            'is a capable soldier of an empire',
+            'has been known to be with royal blood',
+        ],
+        poor: [
+            'comes from a poor family',
+            'has been raised in a monastery',
+            'has endured life\'s hardships',
+            'grew as a farmer in a small village',
+        ],
+    },
     purpose: [
         `seeks to return his family\'s stolen ${pickRandomOption(words.stolenItems)}`,
         `seeks revenge for his ${pickRandomOption(words.familyRelatives)}`,
-        'must return his army\'s lost warbanner',
-    ]
+        'must return his army\'s lost banner',
+        `has a mission of finding a legendary ${pickRandomOption(words.legendaryObjects)}`,
+    ],
 };
 
 const meleeWeapons = [
@@ -52,12 +66,20 @@ function pickRandomOption(options) {
     return options[Math.floor(Math.random() * options.length)];
 }
 
+function chooseOrigin() {
+    const originTypes = ['noble', 'poor'];
+
+    let originType = pickRandomOption(originTypes);
+    let origin = pickRandomOption(phrases.origin[originType]);
+    return [origin, originType];
+}
+
 function constructText() {
     const characterName = nameElement.textContent;
     const weaponName = weaponElement.textContent;
 
     let type;
-    let origin = pickRandomOption(phrases.origin);
+    let [origin, originType] = chooseOrigin();
     let purpose = pickRandomOption(phrases.purpose);
 
     if (meleeWeapons.includes(weaponName)) {
@@ -71,9 +93,9 @@ function constructText() {
     let result = [
         characterName + ' ',
         origin,
-        pickRandomOption(words.connectors),
+        pickRandomOption(originType === 'noble' ? connectors.addition : connectors.opposition),
         type,
-        pickRandomOption(words.connectors),
+        '. ' + pronoun + ' ',
         purpose,
         '.'
     ].join('');
