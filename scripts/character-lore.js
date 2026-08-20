@@ -17,7 +17,7 @@ const connectors = {
 
 const pronoun = 'He';
 
-const phrases = {
+const characterTypes = {
     warrior: [
         'he is a battle-hardened warrior',
         'he wields his weapon with great strength',
@@ -32,26 +32,28 @@ const phrases = {
     archer: [
         'he has the ability to fire multiple shots at once',
     ],
-    origin: {
-        noble: [
-            'comes from a noble family',
-            'is a capable soldier of an empire',
-            'has been known to be with royal blood',
-        ],
-        poor: [
-            'comes from a poor family',
-            'has been raised in a monastery',
-            'has endured life\'s hardships',
-            'grew as a farmer in a small village',
-        ],
-    },
-    purpose: [
-        `seeks to return his family\'s stolen ${pickRandomOption(words.stolenItems)}`,
-        `seeks revenge for his ${pickRandomOption(words.familyRelatives)}`,
-        'must return his army\'s lost banner',
-        `has a mission of finding a legendary ${pickRandomOption(words.legendaryObjects)}`,
+};
+
+const origins = {
+    noble: [
+        'comes from a noble family',
+        'is a capable soldier of an empire',
+        'has been known to be with royal blood',
+    ],
+    poor: [
+        'comes from a poor family',
+        'has been raised in a monastery',
+        'has endured life\'s hardships',
+        'grew as a farmer in a small village',
     ],
 };
+
+const purposes = [
+    `seeks to return his family\'s stolen ${pickRandomOption(words.stolenItems)}`,
+    `seeks revenge for his ${pickRandomOption(words.familyRelatives)}`,
+    'must return his army\'s lost banner',
+    `has a mission of finding a legendary ${pickRandomOption(words.legendaryObjects)}`,
+];
 
 const meleeWeapons = [
     'Sword & Shield', 'Axe & Shield', 'Dual Swords', 'Dual Axes', 'Spear & Shield',
@@ -70,7 +72,7 @@ function chooseOrigin() {
     const originTypes = ['noble', 'poor'];
 
     let originType = pickRandomOption(originTypes);
-    let origin = pickRandomOption(phrases.origin[originType]);
+    let origin = pickRandomOption(origins[originType]);
     return [origin, originType];
 }
 
@@ -80,14 +82,14 @@ function constructText() {
 
     let type;
     let [origin, originType] = chooseOrigin();
-    let purpose = pickRandomOption(phrases.purpose);
+    let purpose = pickRandomOption(purposes);
 
     if (meleeWeapons.includes(weaponName)) {
-        type = pickRandomOption(phrases.warrior);
+        type = pickRandomOption(characterTypes.warrior);
     } else if (mageWeapons.includes(weaponName)) {
-        type = pickRandomOption(phrases.mage);
+        type = pickRandomOption(characterTypes.mage);
     } else if (rangedWeapons.includes(weaponName)) {
-        type = pickRandomOption(phrases.archer);
+        type = pickRandomOption(characterTypes.archer);
     }
 
     let result = [
