@@ -16,18 +16,18 @@ export const pronoun = 'He';
 
 export const characterTypes = {
     warrior: [
-        'he is a battle-hardened warrior',
-        'he wields his weapon with great strength',
-        'he often carries his army\'s warbanner on the battlefield',
+        'is a battle-hardened warrior',
+        'wields his weapon with great strength',
+        'often carries his army\'s warbanner on the battlefield',
     ],
     mage: [
-        'he is a battle-born mage',
-        `he can strike his enemies with ${pickRandomOption(words.elementTypes)} magic from afar`,
-        'he is a respected wizard',
-        'he is a battlemage',
+        'is a battle-born mage',
+        `can strike his enemies with ${pickRandomOption(words.elementTypes)} magic from afar`,
+        'is a respected wizard',
+        'is a battlemage',
     ],
     archer: [
-        'he has the ability to fire multiple shots at once',
+        'has the ability to fire multiple shots at once',
     ],
 };
 

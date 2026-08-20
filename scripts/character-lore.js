@@ -15,29 +15,50 @@ function chooseOrigin() {
     return [origin, originType];
 }
 
+function determinePhrasesOrder() {
+    const firstPhrase = Math.floor(Math.random() * 2) === 0 ? 'origin' : 'characterType';
+    const secondPhrase = firstPhrase === 'characterType' ? 'origin' : 'characterType';
+    const thirdPhrase = 'purpose';
+    
+    const order = {
+        1: firstPhrase,
+        2: secondPhrase,
+        3: thirdPhrase,
+    };
+    return order;
+}
+
 function constructText() {
     const characterName = nameElement.textContent;
     const weaponName = weaponElement.textContent;
 
-    let type;
+    let characterType;
     let [origin, originType] = chooseOrigin();
     let purpose = pickRandomOption(purposes);
 
     if (meleeWeapons.includes(weaponName)) {
-        type = pickRandomOption(characterTypes.warrior);
+        characterType = pickRandomOption(characterTypes.warrior);
     } else if (mageWeapons.includes(weaponName)) {
-        type = pickRandomOption(characterTypes.mage);
+        characterType = pickRandomOption(characterTypes.mage);
     } else if (rangedWeapons.includes(weaponName)) {
-        type = pickRandomOption(characterTypes.archer);
+        characterType = pickRandomOption(characterTypes.archer);
     }
+    
+    const phrases = {
+        origin,
+        characterType,
+        purpose,
+    };
+    const phrasesOrder = determinePhrasesOrder();
 
     let result = [
         characterName + ' ',
-        origin,
+        phrases[phrasesOrder['1']],
         pickRandomOption(originType === 'noble' ? connectors.addition : connectors.opposition),
-        type,
+        pronoun.toLowerCase() + ' ',
+        phrases[phrasesOrder['2']],
         '. ' + pronoun + ' ',
-        purpose,
+        phrases[phrasesOrder['3']],
         '.'
     ].join('');
 
