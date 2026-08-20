@@ -19,18 +19,18 @@ const pronoun = 'He';
 
 const phrases = {
     warrior: [
-        'is a battle-hardened warrior',
-        'wields his weapon with great strength',
-        'often carries his army\'s warbanner on the battlefield',
+        'he is a battle-hardened warrior',
+        'he wields his weapon with great strength',
+        'he often carries his army\'s warbanner on the battlefield',
     ],
     mage: [
-        'is a battle-born mage',
-        `can strike his enemies with ${pickRandomOption(words.elementTypes)} magic from afar`,
-        'is a respected wizard',
-        'is a battlemage',
+        'he is a battle-born mage',
+        `he can strike his enemies with ${pickRandomOption(words.elementTypes)} magic from afar`,
+        'he is a respected wizard',
+        'he is a battlemage',
     ],
     archer: [
-        'has the ability to fire multiple shots at once',
+        'he has the ability to fire multiple shots at once',
     ],
     origin: {
         noble: [
