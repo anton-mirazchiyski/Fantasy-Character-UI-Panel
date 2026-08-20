@@ -28,7 +28,7 @@ function determinePhrasesOrder() {
     return order;
 }
 
-function constructText() {
+function constructLore() {
     const characterName = nameElement.textContent;
     const weaponName = weaponElement.textContent;
 
@@ -51,18 +51,17 @@ function constructText() {
     };
     const phrasesOrder = determinePhrasesOrder();
 
-    let result = [
+    let lore = [
         characterName + ' ',
         phrases[phrasesOrder['1']],
         pickRandomOption(originType === 'noble' ? connectors.addition : connectors.opposition),
         pronoun.toLowerCase() + ' ',
-        phrases[phrasesOrder['2']],
-        '. ' + pronoun + ' ',
-        phrases[phrasesOrder['3']],
-        '.'
+        phrases[phrasesOrder['2']] + '.',
+        ' ' + pronoun + ' ',
+        phrases[phrasesOrder['3']] + '.'
     ].join('');
 
-    console.log(result);
+    console.log(lore);
 }
 
-createCharacterButtonElement.addEventListener('click', constructText);
+createCharacterButtonElement.addEventListener('click', constructLore);

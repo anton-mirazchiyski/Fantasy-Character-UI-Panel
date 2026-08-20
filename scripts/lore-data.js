@@ -8,8 +8,8 @@ export const words = {
 };
 
 export const connectors = {
-    addition: [' and ',  '. Moreover, ', '. Alongside this ', '. In addition, ', '. Furthermore, '],
-    opposition: [' but ', '. However, ', '. On the other hand, ', '. Nevertheless, '],
+    addition: [' and ', ' and ',  '. Moreover, ', '. Alongside this ', '. In addition, ', '. Furthermore, '],
+    opposition: [' but ', ' but ', '. However, ', '. On the other hand, ',],
 };
 
 export const pronoun = 'He';
@@ -19,6 +19,7 @@ export const characterTypes = {
         'is a battle-hardened warrior',
         'wields his weapon with great strength',
         'often carries his army\'s warbanner on the battlefield',
+        'is an elite warrior',
     ],
     mage: [
         'is a battle-born mage',
@@ -28,6 +29,7 @@ export const characterTypes = {
     ],
     archer: [
         'has the ability to fire multiple shots at once',
+        'is very skilled in archery',
     ],
 };
 
