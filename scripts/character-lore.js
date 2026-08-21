@@ -1,4 +1,4 @@
-import { characterTypes, connectors, mageWeapons, oneHandedWeapons, origins, pronoun, purposes, rangedWeapons, twoHandedWeapons, warriorPrimaryAttribute, warriorSecondaryAttribute } from "./lore-data.js";
+import { characterTypes, connectors, magePrimaryAttribute, mageWeapons, oneHandedWeapons, origins, pronoun, purposes, rangedWeapons, twoHandedWeapons, warriorPrimaryAttribute, warriorSecondaryAttribute } from "./lore-data.js";
 import { pickRandomOption } from "./utils.js";
 
 const nameElement = document.querySelector('.panel-btn.choose-name-btn')
@@ -29,10 +29,7 @@ function determinePhrasesOrder() {
     return order;
 }
 
-function isWarrior() {
-    const weapon = weaponElement.textContent;
-    const mainStat = mainStatElement.textContent;
-
+function isWarrior(weapon, mainStat) {
     if (twoHandedWeapons.includes(weapon) && mainStat === warriorPrimaryAttribute) {
         return true;
     }
@@ -44,19 +41,24 @@ function isWarrior() {
     return false;
 }
 
+function isMage(weapon, mainStat) {
+    return mageWeapons.includes(weapon) && mainStat === magePrimaryAttribute;
+}
+
 function constructLore() {
     const characterName = nameElement.textContent;
-    const weaponName = weaponElement.textContent;
+    const weapon = weaponElement.textContent;
+    const mainStat = mainStatElement.textContent;
 
     let characterType;
     let [origin, originType] = chooseOrigin();
     let purpose = pickRandomOption(purposes);
 
-    if (isWarrior()) {
+    if (isWarrior(weapon, mainStat)) {
         characterType = pickRandomOption(characterTypes.warrior);
-    } else if (mageWeapons.includes(weaponName)) {
+    } else if (isMage(weapon, mainStat)) {
         characterType = pickRandomOption(characterTypes.mage);
-    } else if (rangedWeapons.includes(weaponName)) {
+    } else if (rangedWeapons.includes(weapon)) {
         characterType = pickRandomOption(characterTypes.archer);
     }
     

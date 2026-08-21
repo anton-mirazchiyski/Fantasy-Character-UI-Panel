@@ -65,3 +65,5 @@ export const oneHandedWeapons = ['Sword & Shield', 'Axe & Shield', 'Spear & Shie
 export const warriorPrimaryAttribute = 'Strength';
 
 export const warriorSecondaryAttribute = 'Agility';
+
+export const magePrimaryAttribute = 'Intelligence';
