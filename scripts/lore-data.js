@@ -54,11 +54,14 @@ export const purposes = [
     `has a mission of finding a legendary ${pickRandomOption(words.legendaryObjects)}`,
 ];
 
-export const meleeWeapons = [
-    'Sword & Shield', 'Axe & Shield', 'Dual Swords', 'Dual Axes', 'Spear & Shield',
-    'Greatsword', 'Battleaxe', 'Warhammer', 'Atgeir', 'Halberd', 'Dagger',
-];
-
 export const mageWeapons = ['Staff'];
 
 export const rangedWeapons = ['Bow', 'Crossbow'];
+
+export const twoHandedWeapons = ['Greatsword', 'Battleaxe', 'Warhammer', 'Atgeir', 'Halberd'];
+
+export const oneHandedWeapons = ['Sword & Shield', 'Axe & Shield', 'Spear & Shield', 'Dual Swords', 'Dual Axes', 'Dagger'];
+
+export const warriorPrimaryAttribute = 'Strength';
+
+export const warriorSecondaryAttribute = 'Agility';
