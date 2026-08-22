@@ -1,4 +1,4 @@
-import { characterTypes, connectors, magePrimaryAttribute, mageWeapons, oneHandedWeapons, origins, pronoun, purposes, rangedWeapons, twoHandedWeapons, warriorPrimaryAttribute, warriorSecondaryAttribute } from "./lore-data.js";
+import { archerPrimaryAttribute, characterTypes, connectors, magePrimaryAttribute, mageWeapons, oneHandedWeapons, origins, pronoun, purposes, rangedWeapons, twoHandedWeapons, warriorPrimaryAttribute, warriorSecondaryAttribute } from "./lore-data.js";
 import { pickRandomOption } from "./utils.js";
 
 const nameElement = document.querySelector('.panel-btn.choose-name-btn')
@@ -45,6 +45,22 @@ function isMage(weapon, mainStat) {
     return mageWeapons.includes(weapon) && mainStat === magePrimaryAttribute;
 }
 
+function cannotCarry2HMeleeWeapon(weapon, mainStat) {
+    return twoHandedWeapons.includes(weapon) && mainStat !== warriorPrimaryAttribute;
+}
+
+function cannotCarry1HMeleeWeapon(weapon, mainStat) {
+    return oneHandedWeapons.includes(weapon) && ![warriorPrimaryAttribute, warriorSecondaryAttribute].includes(mainStat);
+}
+
+function cannotUseMageWeapon(weapon, mainStat) {
+    return mageWeapons.includes(weapon) && mainStat !== magePrimaryAttribute;
+}
+
+function cannotUseRangedWeapon(weapon, mainStat) {
+    return rangedWeapons.includes(weapon) && mainStat !== archerPrimaryAttribute;
+}
+
 function constructLore() {
     const characterName = nameElement.textContent;
     const weapon = weaponElement.textContent;
@@ -53,6 +69,7 @@ function constructLore() {
     let characterType;
     let [origin, originType] = chooseOrigin();
     let purpose = pickRandomOption(purposes);
+    let message = null;
 
     if (isWarrior(weapon, mainStat)) {
         characterType = pickRandomOption(characterTypes.warrior);
@@ -60,6 +77,18 @@ function constructLore() {
         characterType = pickRandomOption(characterTypes.mage);
     } else if (rangedWeapons.includes(weapon)) {
         characterType = pickRandomOption(characterTypes.archer);
+    } else if (cannotCarry2HMeleeWeapon(weapon, mainStat)) {
+        message = 'Your character lacks strength to carry this weapon.';
+    } else if (cannotCarry1HMeleeWeapon(weapon, mainStat)) {
+        message = 'Your character either lacks agility or is not strong enough to use this weapon.';
+    } else if (cannotUseMageWeapon(weapon, mainStat)) {
+        message = 'Your character does not have enough intelligence to use such a weapon.';
+    } else if (cannotUseRangedWeapon(weapon, mainStat)) {
+        message = 'Your character needs agility to use this weapon.'
+    }
+
+    if (message) {
+        return console.log(message);
     }
     
     const phrases = {
