@@ -1,7 +1,7 @@
 import { archerPrimaryAttribute, characterTypes, connectors, magePrimaryAttribute, mageWeapons, oneHandedWeapons, origins, pronoun, purposes, rangedWeapons, twoHandedWeapons, warriorPrimaryAttribute, warriorSecondaryAttribute } from "./lore-data.js";
 import { pickRandomOption } from "./utils.js";
 
-const nameElement = document.querySelector('.panel-btn.choose-name-btn')
+const nameElement = document.querySelector('.panel-btn.choose-name-btn');
 const raceElement = document.querySelector('.panel-btn.choose-race-btn');
 const weaponElement = document.querySelector('.panel-btn.choose-weapon-btn');
 const mainStatElement = document.querySelector('.panel-btn.choose-mainStat-btn');
@@ -45,6 +45,10 @@ function isMage(weapon, mainStat) {
     return mageWeapons.includes(weapon) && mainStat === magePrimaryAttribute;
 }
 
+function isArcher(weapon, mainStat) {
+    return rangedWeapons.includes(weapon) && mainStat === archerPrimaryAttribute;
+}
+
 function cannotCarry2HMeleeWeapon(weapon, mainStat) {
     return twoHandedWeapons.includes(weapon) && mainStat !== warriorPrimaryAttribute;
 }
@@ -75,7 +79,7 @@ function constructLore() {
         characterType = pickRandomOption(characterTypes.warrior);
     } else if (isMage(weapon, mainStat)) {
         characterType = pickRandomOption(characterTypes.mage);
-    } else if (rangedWeapons.includes(weapon)) {
+    } else if (isArcher(weapon, mainStat)) {
         characterType = pickRandomOption(characterTypes.archer);
     } else if (cannotCarry2HMeleeWeapon(weapon, mainStat)) {
         message = 'Your character lacks strength to carry this weapon.';
