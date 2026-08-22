@@ -2,7 +2,6 @@ import { archerPrimaryAttribute, characterTypes, connectors, magePrimaryAttribut
 import { pickRandomOption } from "./utils.js";
 
 const nameElement = document.querySelector('.panel-btn.choose-name-btn');
-const raceElement = document.querySelector('.panel-btn.choose-race-btn');
 const weaponElement = document.querySelector('.panel-btn.choose-weapon-btn');
 const mainStatElement = document.querySelector('.panel-btn.choose-mainStat-btn');
 const createCharacterButtonElement = document.querySelector('.create-character-btn');
@@ -49,21 +48,17 @@ function isArcher(weapon, mainStat) {
     return rangedWeapons.includes(weapon) && mainStat === archerPrimaryAttribute;
 }
 
-function cannotCarry2HMeleeWeapon(weapon, mainStat) {
+const cannotCarry2HMeleeWeapon = (weapon, mainStat) => {
     return twoHandedWeapons.includes(weapon) && mainStat !== warriorPrimaryAttribute;
 }
 
-function cannotCarry1HMeleeWeapon(weapon, mainStat) {
+const  cannotCarry1HMeleeWeapon = (weapon, mainStat) => {
     return oneHandedWeapons.includes(weapon) && ![warriorPrimaryAttribute, warriorSecondaryAttribute].includes(mainStat);
 }
 
-function cannotUseMageWeapon(weapon, mainStat) {
-    return mageWeapons.includes(weapon) && mainStat !== magePrimaryAttribute;
-}
+const cannotUseMageWeapon = (weapon, mainStat) => !isMage(weapon, mainStat);
 
-function cannotUseRangedWeapon(weapon, mainStat) {
-    return rangedWeapons.includes(weapon) && mainStat !== archerPrimaryAttribute;
-}
+const cannotUseRangedWeapon = (weapon, mainStat) => !isArcher(weapon, mainStat);
 
 function constructLore() {
     const characterName = nameElement.textContent;
@@ -88,7 +83,7 @@ function constructLore() {
     } else if (cannotUseMageWeapon(weapon, mainStat)) {
         message = 'Your character does not have enough intelligence to use such a weapon.';
     } else if (cannotUseRangedWeapon(weapon, mainStat)) {
-        message = 'Your character needs agility to use this weapon.'
+        message = 'Your character needs agility to use this weapon.';
     }
 
     if (message) {
